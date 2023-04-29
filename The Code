@@ -18,3 +18,14 @@ def open_image():
         tkimage = ImageTk.PhotoImage(image)
         label = tk.Label(root, image=tkimage)
         label.pack()
+
+    def rgb_picker():
+        if image:
+            label.bind("<Button-1>", lambda event: print(image.getpixel((event.x, event.y))))
+    picker_button = tk.Button(root, text="Activate RGB Picker", command=rgb_picker)
+    picker_button.pack()
+
+open_button = tk.Button(root, text="Open Image", command=open_image)
+open_button.pack()
+
+root.mainloop()
