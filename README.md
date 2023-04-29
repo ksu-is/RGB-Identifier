@@ -1,5 +1,4 @@
-# color-selector-chrome-extenrion
+# RGB Identifier
 
-This program is a chrome extension that will allow the user to click on a color from a website and pull the RGB information of the color. I will be pulling code from different repositories and modifying them accordingly to fit the parameters of my project.
+This program allows a user to upload a picture from their computer and see what the RGB profile of any color in the image. When the user clicks the RGB identifier button, the program will print the RGB numbers. 
 
-To create the chrome extension, I will be using: https://github.com/PFython/pyscript-local-runtime To create the color selector, I will be watching various youtube videos on color wheels and selectors to build the code from that.
