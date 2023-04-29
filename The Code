@@ -1,0 +1,20 @@
+from PIL import Image, ImageTk
+import tkinter as tk
+from tkinter import filedialog
+
+root = tk.Tk()
+root.title("Image Viewer")
+tkimage = None
+
+def open_image():
+    global tkimage
+    filepath = filedialog.askopenfilename(
+        filetypes=[("Image Files", "*.png;*.jpg;*.jpeg;*.bmp")]
+    )
+    if filepath:
+        image = Image.open(filepath)
+        size = (600, 600)
+        image = image.resize(size, Image.ANTIALIAS)
+        tkimage = ImageTk.PhotoImage(image)
+        label = tk.Label(root, image=tkimage)
+        label.pack()
