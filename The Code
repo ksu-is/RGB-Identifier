@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import filedialog
 
 root = tk.Tk()
-root.title("Image Viewer")
+root.title("RGB-Identifier")
 tkimage = None
 
 def open_image():
@@ -13,7 +13,7 @@ def open_image():
     )
     if filepath:
         image = Image.open(filepath)
-        size = (600, 600)
+        size = (580, 580)
         image = image.resize(size, Image.ANTIALIAS)
         tkimage = ImageTk.PhotoImage(image)
         label = tk.Label(root, image=tkimage)
@@ -22,7 +22,7 @@ def open_image():
     def rgb_picker():
         if image:
             label.bind("<Button-1>", lambda event: print(image.getpixel((event.x, event.y))))
-    picker_button = tk.Button(root, text="Activate RGB Picker", command=rgb_picker)
+    picker_button = tk.Button(root, text="Get RGB", command=rgb_picker)
     picker_button.pack()
 
 open_button = tk.Button(root, text="Open Image", command=open_image)
